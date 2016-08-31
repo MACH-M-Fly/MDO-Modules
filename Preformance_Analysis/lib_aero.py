@@ -31,47 +31,6 @@ CL_tail_noflap = np.poly1d(np.polyfit(alphas_tail_noflap,CLs_tail_noflap, 2))
 
 
 
-def get_aeroCoef(filename = 'aircraft'):
-
-
-	avl_run(filename, 0, 12 )
-	
-	alphas, CLs, CDs, CMs = getData_AVL(filename +'_data.dat')[0:4]
-	NP = getNP_AVL('stab.txt')
-
-	# plt.figure(3)
-	# plt.subplot(311)
-	# plt.ylabel('CL')
-	# plt.xlabel('Alpha')
-	# plt.plot(alphas, CLs, 'b')
-
-	# plt.subplot(312)
-	# plt.ylabel('CD')
-	# plt.xlabel('Alpha')
-	# plt.plot(alphas, CDs, 'b')
-
-
-	# plt.subplot(313)
-	# plt.ylabel('CM')
-	# plt.xlabel('Alpha')
-	# plt.plot(alphas, CMs, 'b')
-
-	# convert to radians
-
-
-	alphas = [x * np.pi/180 for x in alphas]
-	
-	# get func for aero coeificent
-	CL = np.poly1d(np.polyfit(alphas,CLs, 1))
-	CD = np.poly1d(np.polyfit(alphas,CDs, 2))
-	CM = np.poly1d(np.polyfit(alphas,CMs, 2))
-
-	
-	return (CL, CD, CM, NP)
-
-
-
-
 def thrust(vel, ang):
 	T_0 = 18.00
 	T_1 = -0.060
@@ -193,9 +152,9 @@ def turn(bank_angle, velocity, weight ,Sref_wing, turn_angle):
 	rad = velocity**2/(np.tan(bank_angle)*g)
 	CL = (weight*2)/(np.cos(bank_angle_r)*Sref_wing*Rho*velocity**2)
 
-	t = (rad*2*np.pi*(turn_angle/360))/velocity
+	time = (rad*2*np.pi*(turn_angle/360))/velocity
 
-	return t
+	return time
 
 
 
