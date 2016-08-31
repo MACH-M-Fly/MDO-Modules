@@ -1,26 +1,5 @@
 import numpy as np
 
-class Beam:
-  def __init__(self, length):
-    pass
-    self
-
-
-
-
-class compositBeam():
-  def __init__(self, length, web_E, flange_E, Iyy):
-    self.length
-    self.web_E
-    self.flange_E
-    self.Iyy
-    # for theroy see 
-    # http://www.ecourses.ou.edu/cgi-bin/ebook.cgi?topic=me&chap_sec=06.1&page=theory
-    # Equivalent Area Method
-
-    
-  # def 
-
 
 
 class Surface():
