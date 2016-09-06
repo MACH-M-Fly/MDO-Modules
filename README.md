@@ -11,10 +11,13 @@ History
 
 	Aircraft_Class
 		v. 0.1 - Initial Class Creation (JA, 08 2016)
+	Aircraft Configuration Class
+		v. 0.1 - File I/O and basic surfaces done (BL, 08 2016)
 
 	Mass_Properties
 		v. 0.1 - Added Initial Wieghts Module From MACH-MDO (JA, 08 2016)
-
+	Momentum Buildup Takeoff Sim
+		v. 0.1 - Takeoff Simulation used in Kohei's MATLAB code, ready for direct plug in to OpenMDAO
 	Postprocess
 		v. 0.1 - Initial Postprocess Module From MACH-MDO (JA, 08 2016)
 
@@ -27,3 +30,4 @@ History
 	Visualization
 		v. 0.1 - Added Initial Plot Module From MACH-MDO (JA, 08 2016)
 
+	
