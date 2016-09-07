@@ -1,0 +1,128 @@
+MDO aircraft configuration file
+Copy and paste sections as needed
+For any variable input, make sure there is an equal sign with a space both behind and in front of it.
+
+============================================
+Aircraft overall configuration (1. make sure all listed variables have values) (2. values are number of surfaces)
+============================================
+
+AIRCRAFT_NAME = new_AC
+WING = 1
+H_TAIL = 1
+V_TAIL = 1
+BOOM = 1
+FUESELAGE_SURFACE = 0
+FUESELAGE_BODY = 0
+OTHER_SURFACE = 0
+
+========================================================================================
+Surface information
+For surfaces, include constraints (both max/min), initial starting point, and characteristics 
+
+------Variable formating:----------
+Constraints: ALL CAPS, Surface name + #: (ex. WING1_CHORD_MAX, H_TAIL1_TAPER_MIN etc.)
+Characteristics: Capitalize the surface name first letter + surface number + underscore + characteristic (ex. Wing1_airfoil, H_tail_taper, etc.)
+Initial starting point: ALL CAP Characteristic + 'INIT' + surface name + number (ex. ANGLE_INIT_V_TAIL1, etc.)
+=======================================================================================
+
+------------------------------------------# Wing-----------------------------------
+-- Characterisitics --
+WING1_Optimize = TRUE
+WING1_Num_Sections = 10
+WING1_Name = Wing1
+
+-- Initial starting points --
+X_OFFSET_INIT_WING1 = 0.0
+AIRFOIL_INIT_WING1 = e420.dat
+ROOT_CHORD_INIT_WING1 = 1.6
+WINGSPAN_INIT_WING1 = 5.0
+
+-- Constrainits --
+WING1_TAPER_MAX = 1.0
+WING1_TAPER_MIN = 0.01
+WING1_ANGLE_MAX = 3.0
+WING1_ANGLE_MIN = -3.0
+WING1_DIHEDRAL_MAX = 2.0
+WING1_DIHEDRAL_MIN = -2.0
+WING1_X_OFFSET_MAX = 3.0
+WING1_X_OFFSET_MIN = 0.0
+WING1_CHORD_MIN = 1.0
+WING1_CHORD_MAX = 3.0
+WING1_WINGSPAN_MIN = 4.0
+WING1_WINGSPAN_MAX = 20.0
+
+-------------------------------# H_tail--------------------------------------------
+-- Characterisitics --
+H_TAIL1_Optimize = TRUE
+H_TAIL1_Num_Sections = 3
+H_TAIL1_Name = H_TAIL1
+
+-- Initial starting points --
+X_OFFSET_INIT_H_TAIL1 = 8.0
+AIRFOIL_INIT_H_TAIL1 = n0012.dat
+ROOT_CHORD_INIT_H_TAIL1 = 1.0
+WINGSPAN_INIT_H_TAIL1 = 2.0
+
+-- Constrainits --
+H_TAIL1_TAPER_MAX = 1.0
+H_TAIL1_TAPER_MIN = 0.01
+H_TAIL1_ANGLE_MAX = 3.0
+H_TAIL1_ANGLE_MIN = -3.0
+H_TAIL1_DIHEDRAL_MAX = 2.0
+H_TAIL1_DIHEDRAL_MIN = -2.0
+H_TAIL1_X_OFFSET_MAX = 10.0
+H_TAIL1_X_OFFSET_MIN = 6.0
+H_TAIL1_CHORD_MIN = 0.2
+H_TAIL1_CHORD_MAX = 2.0
+H_TAIL1_WINGSPAN_MIN = 0.1
+H_TAIL1_WINGSPAN_MAX = 3.0
+
+-------------------------------# V_tail--------------------------------------------
+-- Characterisitics --
+V_TAIL1_Optimize = TRUE
+V_TAIL1_Num_Sections = 3
+V_TAIL1_Name = V_TAIL1
+
+-- Initial starting points --
+X_OFFSET_INIT_V_TAIL1 = 9.0
+Y_OFFSET_INIT_V_TAIL1 = 0.0
+AIRFOIL_INIT_V_TAIL1 = n0012.dat
+ROOT_CHORD_INIT_V_TAIL1 = 1.0
+WINGSPAN_INIT_V_TAIL1 = 2.0
+
+-- Constrainits --
+V_TAIL1_TAPER_MAX = 1.0
+V_TAIL1_TAPER_MIN = 0.01
+V_TAIL1_ANGLE_MAX = 3.0
+V_TAIL1_ANGLE_MIN = -3.0
+V_TAIL1_DIHEDRAL_MAX = 2.0
+V_TAIL1_DIHEDRAL_MIN = -2.0
+V_TAIL1_X_OFFSET_MAX = 10.0
+V_TAIL1_X_OFFSET_MIN = 6.0
+V_TAIL1_Y_OFFSET_MAX = 1.0
+V_TAIL1_Y_OFFSET_MIN = 0.0
+V_TAIL1_CHORD_MIN = 0.1
+V_TAIL1_CHORD_MAX = 2.0
+V_TAIL1_WINGSPAN_MIN = 0.1
+V_TAIL1_WINGSPAN_MAX = 3.0
+
+
+----------------------------# Fueselage (Body) -----------------------------------
+
+----------------------------# Fueselage (Surface) --------------------------------
+
+----------------------------# Boom -----------------------------------------------
+-- Characterisitics --
+DENSITY_INIT_BOOM1 = 1
+LENGTH_INIT_BOOM1 = 3
+
+BOOM1_DENSITY_MAX = 100
+BOOM1_DENSITY_MIN = 1
+BOOM1_LENGTH_MAX = 10
+BOOM1_LENGTH_MIN =  3
+
+
+----------------------------# Other Surfaces -----------------------------
+
+
+# Optimization setup
